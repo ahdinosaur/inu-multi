@@ -14,6 +14,10 @@ npm install --save inu-multi
 
 returns an enhanced [`inu`](https://github.com/ahdinosaur/inu) app which modifies `app.run` to allow `app.update` to return an `Array` of effects.
 
+## inspiration
+
+- [`ashaffer/redux-multi`](https://github.com/ashaffer/redux-multi)
+
 ## license
 
 The Apache License
