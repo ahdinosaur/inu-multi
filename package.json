@@ -1,6 +1,6 @@
 {
   "name": "inu-multi",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "run multiple effects in inu",
   "main": "index.js",
   "scripts": {
