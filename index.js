@@ -1,20 +1,20 @@
-const pull = require('pull-stream')
-const pullMany = require('pull-many')
+const extend = require('xtend')
+const empty = require('pull-stream/sources/empty')
+const many = require('pull-many')
 
 module.exports = inuMulti
 
 function inuMulti (app) {
-  return {
-    init: app.init,
-    update: app.update,
-    view: app.view,
+  if (!app.run) return app
+
+  return extend(app, {
     run: function runMulti (effect, sources) {
       if (Array.isArray(effect)) {
-        return pullMany(effect.map((eff) => {
-          return app.run(eff, sources) || pull.empty()
+        return many(effect.map((eff) => {
+          return app.run(eff, sources) || empty()
         }))
       }
       return app.run(effect, sources)
     }
-  }
+  })
 }
