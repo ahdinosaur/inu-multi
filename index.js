@@ -1,6 +1,6 @@
-const extend = require('xtend')
-const empty = require('pull-stream/sources/empty')
-const many = require('pull-many')
+var extend = require('xtend')
+var empty = require('pull-stream/sources/empty')
+var many = require('pull-many')
 
 module.exports = inuMulti
 
