@@ -10,7 +10,7 @@ function inuMulti (app) {
   return extend(app, {
     run: function runMulti (effect, sources) {
       if (Array.isArray(effect)) {
-        return many(effect.map((eff) => {
+        return many(effect.map(function runEffect (eff) {
           return app.run(eff, sources) || empty()
         }))
       }
